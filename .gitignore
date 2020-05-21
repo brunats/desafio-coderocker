@@ -12,6 +12,8 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+backend/log/*
+backend/tmp/*
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
@@ -25,3 +27,4 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+backend/config/master.key

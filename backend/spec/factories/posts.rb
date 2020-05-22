@@ -1,7 +1,7 @@
 FactoryBot.define do
     factory :post do
-      title { "MyString" }
-      body { "MyText" }
-      image_url { "MyString" }
+      title { Faker::Book.title }
+      body { Faker::Lorem.sentence }
+      image_url { Faker::Internet.url }
     end
 end

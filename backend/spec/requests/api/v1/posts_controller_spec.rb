@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe API::V1::PostsController, type: :request do
-  describe 'POST #index' do
-    context 'without id' do
+  describe 'Posts #index' do
+    context 'when id doesnt pass' do
       let(:posts) { create_list(:post, 3) }
       
       before(:each) do
@@ -20,7 +20,7 @@ RSpec.describe API::V1::PostsController, type: :request do
     end
   end
 
-  describe 'POST #show' do
+  describe 'Posts #show' do
     context 'when pass valid id' do
       let(:posts) { create_list(:post, 3) }
 
@@ -36,6 +36,19 @@ RSpec.describe API::V1::PostsController, type: :request do
       it 'return selected post' do
         expect(json_response[:data][:id]).to eq(posts.first.id)
         expect(json_response[:data][:title]).to eq(posts.first.title)
+      end
+    end
+
+    context 'when pass invalid id' do
+      let(:posts) { create_list(:post, 3) }
+
+      before(:each) do
+        posts
+        get api_v1_post_path(-1)
+      end
+
+      it 'returns http not_found' do
+        expect(response).to have_http_status(:not_found)
       end
     end
   end

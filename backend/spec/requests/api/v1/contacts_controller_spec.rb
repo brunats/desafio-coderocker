@@ -20,6 +20,37 @@ RSpec.describe API::V1::ContactsController, type: :request do
     end
   end
 
+  describe 'Contacts #show' do
+    let(:contacts) { create_list(:contact, 3) }
+
+    context 'when pass valid id' do
+      before(:each) do
+        contacts
+        get api_v1_contact_path(contacts.first.id)
+      end
+
+      it 'returns http success' do
+        expect(response).to have_http_status(:ok)
+      end
+
+      it 'return selected contact' do
+        expect(json_response[:data][:id]).to eq(contacts.first.id)
+        expect(json_response[:data][:name]).to eq(contacts.first.name)
+      end
+    end
+
+    context 'when pass invalid id' do
+      before(:each) do
+        contacts
+        get api_v1_contact_path(-1)
+      end
+
+      it 'returns http not_found' do
+        expect(response).to have_http_status(:not_found)
+      end
+    end
+  end
+
   describe 'Contacts #create' do
     context 'when pass valid contact' do
       let(:contact) { build(:contact) }

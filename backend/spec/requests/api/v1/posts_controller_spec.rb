@@ -26,7 +26,7 @@ RSpec.describe API::V1::PostsController, type: :request do
 
       before(:each) do
         posts
-        get api_v1_post_path(posts.first)
+        get api_v1_post_path(posts.first.id)
       end
 
       it 'returns http success' do

@@ -4,27 +4,49 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+# BACKEND
 # Ignore bundler config.
 /.bundle
 
 # Ignore all logfiles and tempfiles.
-/log/*
-/tmp/*
-!/log/.keep
-!/tmp/.keep
+backend/!/log/.keep
+backend/!/tmp/.keep
 backend/log/*
 backend/tmp/*
 
 # Ignore pidfiles, but keep the directory.
-/tmp/pids/*
-!/tmp/pids/
-!/tmp/pids/.keep
+backend/tmp/pids/*
+backend/!/tmp/pids/
+backend/!/tmp/pids/.keep
 
 # Ignore uploaded files in development.
-/storage/*
-!/storage/.keep
-.byebug_history
+backend/storage/*
+backend/!/storage/.keep
+backend/.byebug_history
 
 # Ignore master key for decrypting credentials and more.
-/config/master.key
 backend/config/master.key
+
+
+# FRONTEND
+# dependencies
+frontend/node_modules
+frontend/.pnp
+frontend/.pnp.js
+
+# testing
+frontend//coverage
+
+# production
+frontend//build
+
+# misc
+frontend/.DS_Store
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*

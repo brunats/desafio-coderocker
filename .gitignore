@@ -6,52 +6,25 @@
 
 # Ignore bundler config.
 /.bundle
-backend/.bundle
-frontend/.bundle
 
 # Ignore all logfiles and tempfiles.
 /log/*
-!/log/.keep
 /tmp/*
+!/log/.keep
 !/tmp/.keep
-
 backend/log/*
-backend/!/log/.keep
 backend/tmp/*
-backend/!/log/.keep
-
-frontend/log/*
-frontend/!/log/.keep
-frontend/tmp/*
-frontend/!/log/.keep
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
 !/tmp/pids/
 !/tmp/pids/.keep
 
-backend/tmp/pids/*
-backend/!/tmp/pids/
-backend/!/tmp/pids/.keep
-
-frontend/tmp/pids/*
-frontend/!/tmp/pids/
-frontend/!/tmp/pids/.keep
-
 # Ignore uploaded files in development.
 /storage/*
 !/storage/.keep
 .byebug_history
 
-backend/storage/*
-backend/!/storage/.keep
-backend/.byebug_history
-
-frontend/storage/*
-frontend/!/storage/.keep
-frontend/.byebug_history
-
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 backend/config/master.key
-frontend/config/master.key

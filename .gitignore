@@ -4,7 +4,7 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
-# BACKEND
+## BACKEND
 # Ignore bundler config.
 /.bundle
 
@@ -28,17 +28,17 @@ backend/.byebug_history
 backend/config/master.key
 
 
-# FRONTEND
+## FRONTEND
 # dependencies
 frontend/node_modules
 frontend/.pnp
-frontend/.pnp.js
+frontend.pnp.js
 
 # testing
-frontend//coverage
+frontend/coverage
 
 # production
-frontend//build
+frontend/build
 
 # misc
 frontend/.DS_Store

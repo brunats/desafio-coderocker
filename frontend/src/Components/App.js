@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Header from '../Header/Header'
+import Header from './Header/Header'
 import Home from '../Pages/Home'
 
 import { makeStyles } from '@material-ui/core/styles'
@@ -22,13 +22,13 @@ const useStyles = makeStyles((theme) => ({
   
 }))
 
-function App() {
+function App({ children }) {
   const style = useStyles()
 
   return (
     <div className={style.root}>
       <Header />
-      <Home />
+      {children}
     </div>
   )
 }

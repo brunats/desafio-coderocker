@@ -15,21 +15,6 @@ const useStyles = makeStyles({
 function Home() {
   const style = useStyles()
 
-  const cards = [
-    {
-      "author": "Kelsi Monahan",
-      "title": "Qui occaecati vero et quibusdam non",
-      "post": "Saepe quia culpa vero. Velit numquam corporis nihil sint enim exercitationem. Rem nulla illum sint et id dolore voluptas",
-      "image_url": "https://source.unsplash.com/640x640/?Rock-concert",
-    },
-    {
-      "author": "Mrs. Alexanne Schneider",
-      "title": "Architecto quos rem unde quia accusantium",
-      "post": "Voluptatum omnis et dolor architecto non totam aspernatur sapiente. Et accusantium rem. Assumenda quia error",
-      "image_url": "https://source.unsplash.com/640x640/?Rock-concert",
-    }
-  ]
-
   return (
     <App>
       <div className={style.root}>

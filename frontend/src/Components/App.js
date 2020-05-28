@@ -1,7 +1,6 @@
 import React from 'react'
 
 import Header from './Header/Header'
-import Home from '../Pages/Home'
 
 import { makeStyles } from '@material-ui/core/styles'
 

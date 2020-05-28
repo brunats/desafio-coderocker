@@ -4,10 +4,7 @@ import SmallCard from '../../Components/SmallCard'
 import BigCard from '../../Components/BigCard'
 
 function Mount(items) {
-  const postPlace = ['big','smallRight', 'smallLeft']
   let mountPosts = []
-
-  let smallPost = []
 
   items.map((item, index) => {
     const key = item[0]

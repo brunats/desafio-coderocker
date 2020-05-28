@@ -1,42 +1,43 @@
-import React from 'react';
+import React from 'react'
 
-import Box from '@material-ui/core/Box';
-import Container from '@material-ui/core/Container';
+import CardLittle from '../CardLittle/CardLittle'
 
-import { createMuiTheme } from '@material-ui/core/styles';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles'
 
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main:  '#2D2D2D'
-    }
-  }
-});
-
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     flexGrow: 1,
+    marginTop: '30px',
+    marginBottom: '30px',
+    height: '100%',
   },
-}));
+  
+}))
 
-function Header() {
-  const classes = useStyles();
+function Body() {
+  const style = useStyles()
+  const cards = [
+    {
+      "author": "Kelsi Monahan",
+      "title": "Qui occaecati vero et quibusdam non",
+      "post": "Saepe quia culpa vero. Velit numquam corporis nihil sint enim exercitationem. Rem nulla illum sint et id dolore voluptas",
+      "image_url": "https://source.unsplash.com/640x640/?Rock-concert",
+    },
+    {
+      "author": "Mrs. Alexanne Schneider",
+      "title": "Architecto quos rem unde quia accusantium",
+      "post": "Voluptatum omnis et dolor architecto non totam aspernatur sapiente. Et accusantium rem. Assumenda quia error",
+      "image_url": "https://source.unsplash.com/640x640/?Rock-concert",
+    }
+  ]
 
   return (
-    <Container>
-        <Box my={2}>
-          {[...new Array(50)]
-            .map(
-              () => `Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`,
-            )
-            .join('\n')}
-        </Box>
-      </Container>
-  );
+    <div className={style.root}>
+      <CardLittle
+        posts={cards}
+      />
+    </div>
+  )
 }
 
-export default Header;
+export default Body

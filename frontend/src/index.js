@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import App from './App/App'
-import Contact from './Contact/Contact'
+import Contact from './Pages/Contact'
 
 import * as serviceWorker from './serviceWorker'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'

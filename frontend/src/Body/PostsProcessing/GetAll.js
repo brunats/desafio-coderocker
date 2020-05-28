@@ -46,13 +46,10 @@ function GetAll() {
     return <div>Loading...</div>
 
   } else if (items.length > 0) {
-
       const classifiedItems = Classified(items)
       const posts = Mount(classifiedItems).map((post) =>
         <div className={style.line}>{post}</div>
       )
-
-      console.log('posts', posts)
 
       return posts
   } else {

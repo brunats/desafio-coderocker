@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
 
-import SmallCard from '../../Cards/SmallCard'
-import BigCard from '../../Cards/BigCard'
 import Classified from './Classified'
 import Mount from './Mount'
 

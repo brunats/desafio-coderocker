@@ -1,6 +1,6 @@
 import React from 'react'
 
-import GetAll from '../Body/PostsProcessing/GetAll.js'
+import GetAll from './PostsProcessing/GetAll.js'
 
 import { makeStyles } from '@material-ui/core/styles'
 

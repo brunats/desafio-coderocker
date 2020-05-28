@@ -2,14 +2,21 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import App from './App/App'
+import Contact from './Contact/Contact'
 
 import * as serviceWorker from './serviceWorker'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import './index.css'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+        <Switch>
+            <Route path="/" exact={true} component={App} />
+            <Route path="/contact" component={Contact} />
+        </Switch>
+    </ BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 )

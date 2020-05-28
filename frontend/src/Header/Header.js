@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { Link as RouterLink } from 'react-router-dom'
+
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import useScrollTrigger from '@material-ui/core/useScrollTrigger'
 import { makeStyles } from '@material-ui/core/styles'
@@ -70,8 +72,8 @@ function Header(props) {
               <Typography variant="h5" className={classes.title}>
                 Rockr Blog
               </Typography>
-              <Button color="inherit">Posts</Button>
-              <Button color="inherit">Contact</Button>
+              <Button color="inherit" component={RouterLink} to="/">Posts</Button>
+              <Button color="inherit" component={RouterLink} to="/contact">Contact</Button>
             </Toolbar>
           </AppBar>
         </ElevationScroll>

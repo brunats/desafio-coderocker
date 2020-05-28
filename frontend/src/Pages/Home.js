@@ -1,5 +1,6 @@
 import React from 'react'
 
+import App from '../Components/App'
 import GetAll from '../Processors/PostsProcessing/GetAll.js'
 
 import { makeStyles } from '@material-ui/core/styles'
@@ -30,9 +31,11 @@ function Home() {
   ]
 
   return (
-    <div className={style.root}>
-      {GetAll()}
-    </div>
+    <App>
+      <div className={style.root}>
+        {GetAll()}
+      </div>
+    </App>
   )
 }
 

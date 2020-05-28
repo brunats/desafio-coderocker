@@ -1,15 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import { makeStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+import useScrollTrigger from '@material-ui/core/useScrollTrigger'
+import { makeStyles } from '@material-ui/core/styles'
 
-import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+import AppBar from '@material-ui/core/AppBar'
+import Button from '@material-ui/core/Button'
+import Toolbar from '@material-ui/core/Toolbar'
+import Typography from '@material-ui/core/Typography'
 
 
 const theme = createMuiTheme({
@@ -18,7 +17,7 @@ const theme = createMuiTheme({
       main:  '#2D2D2D'
     }
   }
-});
+})
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,10 +31,10 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: "15%",
     paddingRight: "15%",
   }
-}));
+}))
 
 function ElevationScroll(props) {
-  const { children } = props;
+  const { children } = props
 
   const trigger = useScrollTrigger({
     disableHysteresis: true,
@@ -57,10 +56,10 @@ function ElevationScroll(props) {
 
 ElevationScroll.propTypes = {
   children: PropTypes.element.isRequired
-};
+}
 
 function Header(props) {
-  const classes = useStyles();
+  const classes = useStyles()
 
   return (
     <div>
@@ -78,7 +77,7 @@ function Header(props) {
         </ElevationScroll>
       </MuiThemeProvider>
     </div>
-  );
+  )
 }
 
-export default Header;
+export default Header

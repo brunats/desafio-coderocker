@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import CardLittle from '../../CardLittle/CardLittle'
+import SmallCard from '../../Cards/SmallCard'
 import Classified from './Classified'
 
 const GetAllPosts = "http://127.0.0.1:4000/api/v1/posts/"
@@ -31,10 +31,9 @@ function GetAll() {
     return <div>Loading...</div>
   } else {
     const classifiedItems = Classified(items)
-    console.log(classifiedItems)
     
     return (
-      <CardLittle posts={items}/>
+      <SmallCard posts={items}/>
     )
   }
 }

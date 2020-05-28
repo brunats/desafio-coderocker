@@ -103,7 +103,7 @@ function card(style, props) {
   )
 }
 
-export default function CardLittle(props) {
+export default function SmallCard(props) {
   const style = useStyles()
   const listCards = props.posts.map((post) => card(style, post))
 

@@ -4,15 +4,12 @@ import GetAll from '../Body/PostsProcessing/GetAll.js'
 
 import { makeStyles } from '@material-ui/core/styles'
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles({
   root: {
     flexGrow: 1,
-    marginTop: '30px',
-    marginBottom: '30px',
     height: '100%',
   },
-  
-}))
+})
 
 function Body() {
   const style = useStyles()

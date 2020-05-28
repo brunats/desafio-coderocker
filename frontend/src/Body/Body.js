@@ -1,6 +1,6 @@
 import React from 'react'
 
-import CardLittle from '../CardLittle/CardLittle'
+import GetAll from '../Body/PostsProcessing/GetAll.js'
 
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -16,6 +16,7 @@ const useStyles = makeStyles(() => ({
 
 function Body() {
   const style = useStyles()
+
   const cards = [
     {
       "author": "Kelsi Monahan",
@@ -33,9 +34,7 @@ function Body() {
 
   return (
     <div className={style.root}>
-      <CardLittle
-        posts={cards}
-      />
+      {GetAll()}
     </div>
   )
 }

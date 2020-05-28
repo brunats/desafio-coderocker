@@ -1,14 +1,14 @@
 import React from 'react'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import App from './App/App'
-import Contact from './Contact/Contact'
+import App from '../App/App'
+import Contact from '../Pages/Contact'
 
 const Routes = () => (
   <BrowserRouter>
     <Switch>
-        <Route path="/" exact={true} component={App} />
-        <Route path="/contact" component={Contact} />
+        <Route exact path="/" component={App} />
+        <Route exact path="/contact" component={Contact} />
     </Switch>
 </ BrowserRouter>
 )

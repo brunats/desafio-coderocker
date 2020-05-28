@@ -2,7 +2,7 @@ function Classified(items) {
   const postPlace = ['big','smallRight', 'smallLeft']
   const classifiedPosts = []
 
-  let smallPost = []
+  let smallPost = null
 
   items.map((item, index) => {
     const key = postPlace[index % 3]
@@ -15,9 +15,14 @@ function Classified(items) {
         smallPost = item
       } else {
         classifiedPosts.push(['small', [smallPost, item]])
+        smallPost = null
       }
     }
   })
+
+  if (smallPost !== null) {
+    classifiedPosts.push(['small', [smallPost]])
+  }
 
   return classifiedPosts
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 
-import SmallCard from '../../../Components/SmallCard'
-import BigCard from '../../../Components/BigCard'
+import SmallCard from '../../Components/SmallCard'
+import BigCard from '../../Components/BigCard'
 
 function Mount(items) {
   const postPlace = ['big','smallRight', 'smallLeft']

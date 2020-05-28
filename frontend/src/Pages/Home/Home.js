@@ -11,7 +11,7 @@ const useStyles = makeStyles({
   },
 })
 
-function Body() {
+function Home() {
   const style = useStyles()
 
   const cards = [
@@ -36,4 +36,4 @@ function Body() {
   )
 }
 
-export default Body
+export default Home

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Header from '../Header/Header'
-import Body from '../Pages/Body/Body'
+import Home from '../Pages/Home/Home'
 
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -28,7 +28,7 @@ function App() {
   return (
     <div className={style.root}>
       <Header />
-      <Body />
+      <Home />
     </div>
   )
 }

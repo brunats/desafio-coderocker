@@ -13,7 +13,7 @@ import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight'
 import Typography from '@material-ui/core/Typography'
 
 const useStyles = makeStyles((theme) => ({
-  cardLittle: {
+  smallCard: {
     display: 'flex',
     flexDirection: 'row',
   },
@@ -108,7 +108,7 @@ export default function SmallCard(props) {
   const listCards = props.posts.map((post) => card(style, post))
 
   return (
-    <div className = {style.cardLittle}>
+    <div className = {style.smallCard}>
       {listCards}
     </div>
   )

@@ -57,7 +57,19 @@ const useStyles = makeStyles((theme) => ({
   },  
 }))
 
+function getBodySentence(body) {
+  const limit = 120
+
+  if(body.length <= limit) {
+    return body
+  }
+
+  return body.substring(0,limit) + '...'
+}
+
 function card(style, props) {
+  const bodyToShow = getBodySentence(props.body)
+
   return (
     <Card className={style.root}>
       <CardMedia
@@ -74,7 +86,7 @@ function card(style, props) {
             {props.title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p" className={style.post}>
-            {props.post}
+            {bodyToShow}
           </Typography>
         </CardContent>
       </div>

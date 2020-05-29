@@ -2,18 +2,12 @@ import React from 'react'
 
 import App from '../Components/App'
 
-import Card from '@material-ui/core/Card'
-import CardHeader from '@material-ui/core/CardHeader';
-import CardContent from '@material-ui/core/CardContent'
-import CardMedia from '@material-ui/core/CardMedia'
-import Typography from '@material-ui/core/Typography'
-
-
-import Grid from '@material-ui/core/Grid';
-import ButtonBase from '@material-ui/core/ButtonBase';
-import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid'
+import ButtonBase from '@material-ui/core/ButtonBase'
+import Paper from '@material-ui/core/Paper'
 
 import { makeStyles } from '@material-ui/core/styles'
+import { parseISO, format} from 'date-fns'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,43 +18,6 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 'unset',
     margin: '5% 15%',
   },
-  details: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    textAlign: 'left',
-    width: '100%',
-  },
-  actionCard: {
-    display: 'flex',
-    flexDirection: 'column-reverse',
-    textAlign: 'left',
-    width: '4%',
-  },
-  media: {
-    width: '50%',
-    height: '20%',
-  },
-  author: {
-    color: '#2D2D2D',
-    fontSize: '10px',
-    lineHeight: '12px',
-  },
-  title: {
-    color: '#F1A10A',
-    fontWeight: '600',
-    fontSize: '18px',
-  },
-  body: {
-    color: '#2D2D2D',
-    fontSize: '12px',
-  },
-  action: {
-    display: 'flex',
-    flexDirection: 'row-reverse',
-  },  
-
-
   paper: {
     margin: 'auto',
     maxWidth: 500,
@@ -81,15 +38,37 @@ const useStyles = makeStyles((theme) => ({
       padding: '10px',
     }
   },
-  date:{
-
-  }
+  date: {
+    fontSize: '8px',
+    lineHeight: '10px',
+  },
+  author: {
+    color: '#2D2D2D',
+    fontSize: '10px',
+    lineHeight: '12px',
+  },
+  title: {
+    color: '#F1A10A',
+    fontWeight: '600',
+    fontSize: '18px',
+  },
+  body: {
+    color: '#2D2D2D',
+    fontSize: '12px',
+    padding: '5% 18%',
+    textAlign: 'left',
+  },
 }))
 
 function Post({ location }) {
   const style = useStyles()
   const props = location.state
-  console.log(props)
+  const date = parseISO(props.created_at)
+
+  const formattedDate = format(
+    date, 
+    "MMMM dd', 'yyyy"
+  )
 
   return (
     <App>
@@ -104,7 +83,7 @@ function Post({ location }) {
             <Grid item xs={6} className={style.intro}>
               <div>
                 <p className={style.date}>
-                  {props.created_at}
+                  {formattedDate}
                 </p>
                 <p className={style.author}>
                   {props.author}

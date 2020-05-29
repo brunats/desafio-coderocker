@@ -95,7 +95,7 @@ function card(style, props, renderLink) {
         <CardContent>
           <CardActions className={style.action}>
           <Link to={{
-            pathname: `posts/${props.id}`,
+            pathname: `post/${props.id}`,
             state: props
           }}>
             <IconButton size="small" >

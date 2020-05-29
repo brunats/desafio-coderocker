@@ -6,11 +6,11 @@ import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import CardActions from '@material-ui/core/CardActions'
-
 import IconButton from '@material-ui/core/IconButton'
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight'
-
 import Typography from '@material-ui/core/Typography'
+
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   smallCard: {
@@ -94,7 +94,7 @@ function card(style, props) {
         <CardContent>
           <CardActions className={style.action}>
             <Link to={{
-              pathname: `posts/${props.id}`,
+              pathname: `post/${props.id}`,
               state: props
             }}>
               <IconButton size="small">

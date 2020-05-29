@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CreatePost = "http://127.0.0.1:4000/api/v1/contacts/"
+const CreatePost = 'http://127.0.0.1:4000/api/v1/contacts/'
 
 class FormContact extends React.Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class FormContact extends React.Component {
   }
 
   mySubmitHandler = (event) => {
-    event.preventDefault();
+    event.preventDefault()
     this.createContact(this.state)
   }
 
@@ -37,7 +37,7 @@ class FormContact extends React.Component {
   }
 
   createContact(data) {
-    var that = this;
+    var that = this
 
     fetch(CreatePost, {
       method: 'POST',

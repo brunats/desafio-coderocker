@@ -93,9 +93,14 @@ function card(style, props) {
       <div className={style.actionCard}>
         <CardContent>
           <CardActions className={style.action}>
-            <IconButton size="small">
-              <KeyboardArrowRightIcon />
-            </IconButton>
+            <Link to={{
+              pathname: `posts/${props.id}`,
+              state: props
+            }}>
+              <IconButton size="small">
+                <KeyboardArrowRightIcon />
+              </IconButton>
+            </Link>
           </CardActions>
         </CardContent>
       </div>

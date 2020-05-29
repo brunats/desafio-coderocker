@@ -1,16 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Link as RouterLink } from 'react-router-dom'
+import FormContact from '../../Components/FormContact'
 
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import useScrollTrigger from '@material-ui/core/useScrollTrigger'
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+import { Link as RouterLink } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 
 import AppBar from '@material-ui/core/AppBar'
 import Button from '@material-ui/core/Button'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
+import Dialog from '@material-ui/core/Dialog'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import DialogContent from '@material-ui/core/DialogContent'
+import DialogTitle from '@material-ui/core/DialogTitle'
+import IconButton from '@material-ui/core/IconButton'
+import CloseIcon from '@material-ui/icons/Close'
 
 
 const theme = createMuiTheme({
@@ -32,7 +39,10 @@ const useStyles = makeStyles((theme) => ({
   toolbar: {
     paddingLeft: "15%",
     paddingRight: "15%",
-  }
+  },
+  buttonClose: {
+    float: "right",
+  },
 }))
 
 function ElevationScroll(props) {
@@ -61,22 +71,48 @@ ElevationScroll.propTypes = {
 }
 
 function Header(props) {
-  const classes = useStyles()
+  const style = useStyles()
+
+  const [open, setOpen] = React.useState(false)
+
+  const handleClickOpen = () => {
+    setOpen(true)
+  }
+
+  const handleClose = () => {
+    setOpen(false)
+  }
+
+  const form = <FormContact />
 
   return (
     <div>
+      <CssBaseline />
       <MuiThemeProvider theme={theme}>
         <ElevationScroll {...props}>
           <AppBar color="primary">
-            <Toolbar className={classes.toolbar}>
-              <Typography variant="h5" className={classes.title}>
+            <Toolbar className={style.toolbar}>
+              <Typography variant="h5" className={style.title}>
                 Rockr Blog
               </Typography>
               <Button color="inherit" component={RouterLink} to="/">Posts</Button>
-              <Button color="inherit" component={RouterLink} to="/contact">Contact</Button>
+              <Button color="inherit" onClick={handleClickOpen}>Contact</Button>
             </Toolbar>
           </AppBar>
         </ElevationScroll>
+        <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+          <DialogTitle id="form-dialog-title">
+            Contact
+            <IconButton aria-label="close" size="small" className={style.buttonClose} onClick={handleClose}>
+              <CloseIcon />
+            </IconButton>
+          </DialogTitle>
+          <DialogContent>
+            <div style={{ padding: 16, margin: 'auto', maxWidth: 600 }}>
+              {form}
+            </div>
+          </DialogContent>
+        </Dialog>
       </MuiThemeProvider>
     </div>
   )
